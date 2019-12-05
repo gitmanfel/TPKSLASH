@@ -38,12 +38,13 @@
         </svg>
       </button>
     </div>
-  
+  {{#each @team.channels as |channel|}}
     <a href="/li/general" data-channel-id="general"
         class="team-sidebar__channel-link py-1 px-4 text-white no-underline block opacity-75 bg-teal-600">
       <span aria-hidden="true">#</span>
-        general
+      {{channel.name}}
     </a>
+    {{/each}}
   </nav>
   
   <footer class="mx-4 mb-2 text-white">
