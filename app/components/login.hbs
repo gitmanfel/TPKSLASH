@@ -1,0 +1,62 @@
+<div class="mx-auto">
+  <div class="flex justify-center flex-row w-full leading-loose text-3xl">
+    Login
+  </div>
+  <div class="flex justify-center flex-row w-full">
+    <div class="w-full max-w-xs">
+      <form class="bg-grey-light shadow-md rounded px-8 pt-6 pb-8 mb-4" {{on "submit" this.onLoginSubmit}}>
+        <div class="inline-block relative w-64 mt-2">
+          <select
+            class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+            {{on "change" this.onLoginChange}}
+          >
+            {{#if (eq this.userId "")}}
+              <option value="null" selected>
+                Choisissez un utilisateur
+              </option>
+            {{else}}
+              <option value="">
+                Choisissez un utilisateur
+              </option>
+            {{/if}}
+            {{#if (eq this.userId 1)}}
+              <option value="1" selected>
+                Gilles Bertrand
+              </option>
+            {{else}}
+              <option value="1">
+                Gilles Bertrand
+              </option>
+            {{/if}}
+            {{#if (eq this.userId 1)}}
+              <option value="2" selected>
+                Stéphane Meermans
+              </option>
+            {{else}}
+              <option value="2">
+                Stéphane Meermans
+              </option>
+            {{/if}}
+          </select>
+          <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+            </svg>
+          </div>
+        </div>
+        <p class="text-blue text-xs italic my-4">
+          The selected user Id is
+          {{this.userId}}
+        </p>
+        <div class="flex items-center justify-between">
+          <input
+            class="{{if this.isDisable "bg-grey" "bg-teal-800"}} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            value="Sign In"
+            type="submit"
+            disable={{this.isDisable}}
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

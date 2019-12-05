@@ -1,0 +1,20 @@
+{{!-- {{@model}} --}}
+    {{! <!-- cannaux -->}} 
+    <TeamSidebar @team={{this.model}}/>
+
+  <main class="flex-1 flex flex-color bg-white overflow-hidden channel">
+    <ChannelHeader
+        @title="this is our general channel"
+        @description="this is where we talk about general javascript"
+        />
+
+    {{! <!-- Liste Message Cannaux -->}}
+
+    <div class="py-4 flex-1 overflow-y-scroll channel-message-list" role="list">
+      <Message @name="Gilles Bertrand" />
+      <Message @name="Mike North" />
+
+      
+    </div>
+    <ChannelFooter />
+  </main> 
